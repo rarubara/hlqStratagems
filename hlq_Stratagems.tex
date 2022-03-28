@@ -1,0 +1,290 @@
+\documentclass{article}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{verbatim}
+ 
+% Enable inlinegraphics
+\usepackage{graphicx,calc}
+\newlength\myheight
+\newlength\mydepth
+\settototalheight\myheight{Xygp}
+\settodepth\mydepth{Xygp}
+\newcommand*\inlinegraphics[1]{
+	\settototalheight\myheight{Xygp}
+	\settodepth\mydepth{Xygp}
+	\raisebox{-\mydepth}{\includegraphics[height=\myheight]{#1}}
+}
+% example use: {\fontsize{10pt}{0.2cm}\selectfont \inlinegraphics{icons/icon.png}}
+ 
+% Enable Japanese writting
+\usepackage{xeCJK}
+\usepackage{pxrubrica} % Example of how to use Ruby: \ruby[g]{錬装融合}{メタルフォーゼ・フュージョン}
+ 
+% declare a Unicode block for Supplementary Ideographic Plane (U+20000 - U+2FFFF)
+% Font HanaMinB support CJK Ext-B, Ext-C and Ext-D.
+\xeCJKDeclareSubCJKBlock{SIP}{
+	"02400 -> "02500   % CJK Unified Ideographs Extension D
+}
+ 
+% set japanese font
+\setCJKmainfont[SIP]{Meiryo UI}
+ 
+% set japanese font for unicode block
+\setCJKmainfont{Meiryo UI}
+ 
+% set english font
+\setmainfont{Arial Narrow}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+ 
+ % page number
+ \cfoot{ \makebox[\textwidth][c]{Page \thepage \hspace{1pt} of 4} }
+ 
+ % decorative lines of header and footer
+ \renewcommand{\headrulewidth}{0pt}
+ \renewcommand{\footrulewidth}{0pt}
+ 
+ % paper size and margins
+ \pdfpagewidth 210mm
+ \pdfpageheight 297mm
+ \usepackage[paperheight=297mm,paperwidth=210mm,margin=0mm,heightrounded
+]{geometry}
+ \geometry{
+	total={\paperwidth,\paperheight},
+	bindingoffset = 0mm,
+	left=0mm,
+	lmargin=0mm,
+	inner=11.232mm,
+	right=0mm,
+	outer=0mm,
+	rmargin=16mm,
+	top=0mm,
+	tmargin=12mm,
+	bottom=0mm,
+	bmargin=17mm,
+	footskip=5mm
+}
+ 
+\usepackage{graphicx} %package to manage images
+\usepackage[space]{grffile} % NOW you can insert images with filename with spaces!
+\graphicspath{ {././hlq_Stratagems/} }
+\usepackage[rightcaption]{sidecap}
+\usepackage{wrapfig}
+\usepackage{lscape}
+ 
+\usepackage{background}
+\backgroundsetup{%
+	angle=0,
+	scale=1,
+	opacity=1,
+	contents={%
+		\begin{tikzpicture}[remember picture, overlay,thick,black]
+			\draw ([shift={(-63.15mm,111.22mm)}]current page.north west) -- +(-5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-63.15mm,111.22mm)}]current page.north west) -- +(5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-63.15mm,111.22mm)}]current page.north west) -- +(0mm,5mm);% card upper left corner: vertical line
+			\draw ([shift={(-63.15mm,111.22mm)}]current page.north west) -- +(0mm,-5mm);% card upper left corner: vertical line
+			\draw ([shift={(-4.83601mm,111.22mm)}]current page.north west) -- +(5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(-4.83601mm,111.22mm)}]current page.north west) -- +(-5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(-4.83601mm,111.22mm)}]current page.north west) -- +(0mm,5mm);% card upper right corner: vertical line
+			\draw ([shift={(-4.83601mm,111.22mm)}]current page.north west) -- +(0mm,-5mm);% card upper right corner: vertical line
+			\draw ([shift={(-63.15mm,26.22mm)}]current page.north west) -- +(-5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-63.15mm,26.22mm)}]current page.north west) -- +(5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-63.15mm,26.22mm)}]current page.north west) -- +(0mm,-5mm);% card lower left corner: vertical line
+			\draw ([shift={(-63.15mm,26.22mm)}]current page.north west) -- +(0mm,5mm);% card lower left corner: vertical line
+			\draw ([shift={(-4.83601mm,26.22mm)}]current page.north west) -- +(5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(-4.83601mm,26.22mm)}]current page.north west) -- +(-5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(-4.83601mm,26.22mm)}]current page.north west) -- +(0mm,-5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(-4.83601mm,26.22mm)}]current page.north west) -- +(0mm,5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(-4.636mm,111.22mm)}]current page.north west) -- +(-5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-4.636mm,111.22mm)}]current page.north west) -- +(5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-4.636mm,111.22mm)}]current page.north west) -- +(0mm,5mm);% card upper left corner: vertical line
+			\draw ([shift={(-4.636mm,111.22mm)}]current page.north west) -- +(0mm,-5mm);% card upper left corner: vertical line
+			\draw ([shift={(53.678mm,111.22mm)}]current page.north west) -- +(5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(53.678mm,111.22mm)}]current page.north west) -- +(-5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(53.678mm,111.22mm)}]current page.north west) -- +(0mm,5mm);% card upper right corner: vertical line
+			\draw ([shift={(53.678mm,111.22mm)}]current page.north west) -- +(0mm,-5mm);% card upper right corner: vertical line
+			\draw ([shift={(-4.636mm,26.22mm)}]current page.north west) -- +(-5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-4.636mm,26.22mm)}]current page.north west) -- +(5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-4.636mm,26.22mm)}]current page.north west) -- +(0mm,-5mm);% card lower left corner: vertical line
+			\draw ([shift={(-4.636mm,26.22mm)}]current page.north west) -- +(0mm,5mm);% card lower left corner: vertical line
+			\draw ([shift={(53.678mm,26.22mm)}]current page.north west) -- +(5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(53.678mm,26.22mm)}]current page.north west) -- +(-5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(53.678mm,26.22mm)}]current page.north west) -- +(0mm,-5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(53.678mm,26.22mm)}]current page.north west) -- +(0mm,5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(53.878mm,111.22mm)}]current page.north west) -- +(-5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(53.878mm,111.22mm)}]current page.north west) -- +(5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(53.878mm,111.22mm)}]current page.north west) -- +(0mm,5mm);% card upper left corner: vertical line
+			\draw ([shift={(53.878mm,111.22mm)}]current page.north west) -- +(0mm,-5mm);% card upper left corner: vertical line
+			\draw ([shift={(112.192mm,111.22mm)}]current page.north west) -- +(5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(112.192mm,111.22mm)}]current page.north west) -- +(-5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(112.192mm,111.22mm)}]current page.north west) -- +(0mm,5mm);% card upper right corner: vertical line
+			\draw ([shift={(112.192mm,111.22mm)}]current page.north west) -- +(0mm,-5mm);% card upper right corner: vertical line
+			\draw ([shift={(53.878mm,26.22mm)}]current page.north west) -- +(-5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(53.878mm,26.22mm)}]current page.north west) -- +(5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(53.878mm,26.22mm)}]current page.north west) -- +(0mm,-5mm);% card lower left corner: vertical line
+			\draw ([shift={(53.878mm,26.22mm)}]current page.north west) -- +(0mm,5mm);% card lower left corner: vertical line
+			\draw ([shift={(112.192mm,26.22mm)}]current page.north west) -- +(5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(112.192mm,26.22mm)}]current page.north west) -- +(-5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(112.192mm,26.22mm)}]current page.north west) -- +(0mm,-5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(112.192mm,26.22mm)}]current page.north west) -- +(0mm,5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(-63.15mm,26.02mm)}]current page.north west) -- +(-5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-63.15mm,26.02mm)}]current page.north west) -- +(5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-63.15mm,26.02mm)}]current page.north west) -- +(0mm,5mm);% card upper left corner: vertical line
+			\draw ([shift={(-63.15mm,26.02mm)}]current page.north west) -- +(0mm,-5mm);% card upper left corner: vertical line
+			\draw ([shift={(-4.83601mm,26.02mm)}]current page.north west) -- +(5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(-4.83601mm,26.02mm)}]current page.north west) -- +(-5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(-4.83601mm,26.02mm)}]current page.north west) -- +(0mm,5mm);% card upper right corner: vertical line
+			\draw ([shift={(-4.83601mm,26.02mm)}]current page.north west) -- +(0mm,-5mm);% card upper right corner: vertical line
+			\draw ([shift={(-63.15mm,-58.98mm)}]current page.north west) -- +(-5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-63.15mm,-58.98mm)}]current page.north west) -- +(5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-63.15mm,-58.98mm)}]current page.north west) -- +(0mm,-5mm);% card lower left corner: vertical line
+			\draw ([shift={(-63.15mm,-58.98mm)}]current page.north west) -- +(0mm,5mm);% card lower left corner: vertical line
+			\draw ([shift={(-4.83601mm,-58.98mm)}]current page.north west) -- +(5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(-4.83601mm,-58.98mm)}]current page.north west) -- +(-5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(-4.83601mm,-58.98mm)}]current page.north west) -- +(0mm,-5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(-4.83601mm,-58.98mm)}]current page.north west) -- +(0mm,5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(-4.636mm,26.02mm)}]current page.north west) -- +(-5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-4.636mm,26.02mm)}]current page.north west) -- +(5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-4.636mm,26.02mm)}]current page.north west) -- +(0mm,5mm);% card upper left corner: vertical line
+			\draw ([shift={(-4.636mm,26.02mm)}]current page.north west) -- +(0mm,-5mm);% card upper left corner: vertical line
+			\draw ([shift={(53.678mm,26.02mm)}]current page.north west) -- +(5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(53.678mm,26.02mm)}]current page.north west) -- +(-5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(53.678mm,26.02mm)}]current page.north west) -- +(0mm,5mm);% card upper right corner: vertical line
+			\draw ([shift={(53.678mm,26.02mm)}]current page.north west) -- +(0mm,-5mm);% card upper right corner: vertical line
+			\draw ([shift={(-4.636mm,-58.98mm)}]current page.north west) -- +(-5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-4.636mm,-58.98mm)}]current page.north west) -- +(5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-4.636mm,-58.98mm)}]current page.north west) -- +(0mm,-5mm);% card lower left corner: vertical line
+			\draw ([shift={(-4.636mm,-58.98mm)}]current page.north west) -- +(0mm,5mm);% card lower left corner: vertical line
+			\draw ([shift={(53.678mm,-58.98mm)}]current page.north west) -- +(5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(53.678mm,-58.98mm)}]current page.north west) -- +(-5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(53.678mm,-58.98mm)}]current page.north west) -- +(0mm,-5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(53.678mm,-58.98mm)}]current page.north west) -- +(0mm,5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(53.878mm,26.02mm)}]current page.north west) -- +(-5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(53.878mm,26.02mm)}]current page.north west) -- +(5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(53.878mm,26.02mm)}]current page.north west) -- +(0mm,5mm);% card upper left corner: vertical line
+			\draw ([shift={(53.878mm,26.02mm)}]current page.north west) -- +(0mm,-5mm);% card upper left corner: vertical line
+			\draw ([shift={(112.192mm,26.02mm)}]current page.north west) -- +(5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(112.192mm,26.02mm)}]current page.north west) -- +(-5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(112.192mm,26.02mm)}]current page.north west) -- +(0mm,5mm);% card upper right corner: vertical line
+			\draw ([shift={(112.192mm,26.02mm)}]current page.north west) -- +(0mm,-5mm);% card upper right corner: vertical line
+			\draw ([shift={(53.878mm,-58.98mm)}]current page.north west) -- +(-5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(53.878mm,-58.98mm)}]current page.north west) -- +(5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(53.878mm,-58.98mm)}]current page.north west) -- +(0mm,-5mm);% card lower left corner: vertical line
+			\draw ([shift={(53.878mm,-58.98mm)}]current page.north west) -- +(0mm,5mm);% card lower left corner: vertical line
+			\draw ([shift={(112.192mm,-58.98mm)}]current page.north west) -- +(5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(112.192mm,-58.98mm)}]current page.north west) -- +(-5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(112.192mm,-58.98mm)}]current page.north west) -- +(0mm,-5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(112.192mm,-58.98mm)}]current page.north west) -- +(0mm,5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(-63.15mm,-59.18mm)}]current page.north west) -- +(-5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-63.15mm,-59.18mm)}]current page.north west) -- +(5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-63.15mm,-59.18mm)}]current page.north west) -- +(0mm,5mm);% card upper left corner: vertical line
+			\draw ([shift={(-63.15mm,-59.18mm)}]current page.north west) -- +(0mm,-5mm);% card upper left corner: vertical line
+			\draw ([shift={(-4.83601mm,-59.18mm)}]current page.north west) -- +(5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(-4.83601mm,-59.18mm)}]current page.north west) -- +(-5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(-4.83601mm,-59.18mm)}]current page.north west) -- +(0mm,5mm);% card upper right corner: vertical line
+			\draw ([shift={(-4.83601mm,-59.18mm)}]current page.north west) -- +(0mm,-5mm);% card upper right corner: vertical line
+			\draw ([shift={(-63.15mm,-144.18mm)}]current page.north west) -- +(-5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-63.15mm,-144.18mm)}]current page.north west) -- +(5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-63.15mm,-144.18mm)}]current page.north west) -- +(0mm,-5mm);% card lower left corner: vertical line
+			\draw ([shift={(-63.15mm,-144.18mm)}]current page.north west) -- +(0mm,5mm);% card lower left corner: vertical line
+			\draw ([shift={(-4.83601mm,-144.18mm)}]current page.north west) -- +(5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(-4.83601mm,-144.18mm)}]current page.north west) -- +(-5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(-4.83601mm,-144.18mm)}]current page.north west) -- +(0mm,-5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(-4.83601mm,-144.18mm)}]current page.north west) -- +(0mm,5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(-4.636mm,-59.18mm)}]current page.north west) -- +(-5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-4.636mm,-59.18mm)}]current page.north west) -- +(5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(-4.636mm,-59.18mm)}]current page.north west) -- +(0mm,5mm);% card upper left corner: vertical line
+			\draw ([shift={(-4.636mm,-59.18mm)}]current page.north west) -- +(0mm,-5mm);% card upper left corner: vertical line
+			\draw ([shift={(53.678mm,-59.18mm)}]current page.north west) -- +(5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(53.678mm,-59.18mm)}]current page.north west) -- +(-5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(53.678mm,-59.18mm)}]current page.north west) -- +(0mm,5mm);% card upper right corner: vertical line
+			\draw ([shift={(53.678mm,-59.18mm)}]current page.north west) -- +(0mm,-5mm);% card upper right corner: vertical line
+			\draw ([shift={(-4.636mm,-144.18mm)}]current page.north west) -- +(-5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-4.636mm,-144.18mm)}]current page.north west) -- +(5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(-4.636mm,-144.18mm)}]current page.north west) -- +(0mm,-5mm);% card lower left corner: vertical line
+			\draw ([shift={(-4.636mm,-144.18mm)}]current page.north west) -- +(0mm,5mm);% card lower left corner: vertical line
+			\draw ([shift={(53.678mm,-144.18mm)}]current page.north west) -- +(5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(53.678mm,-144.18mm)}]current page.north west) -- +(-5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(53.678mm,-144.18mm)}]current page.north west) -- +(0mm,-5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(53.678mm,-144.18mm)}]current page.north west) -- +(0mm,5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(53.878mm,-59.18mm)}]current page.north west) -- +(-5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(53.878mm,-59.18mm)}]current page.north west) -- +(5mm,0mm);% card upper left corner: horizontal line
+			\draw ([shift={(53.878mm,-59.18mm)}]current page.north west) -- +(0mm,5mm);% card upper left corner: vertical line
+			\draw ([shift={(53.878mm,-59.18mm)}]current page.north west) -- +(0mm,-5mm);% card upper left corner: vertical line
+			\draw ([shift={(112.192mm,-59.18mm)}]current page.north west) -- +(5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(112.192mm,-59.18mm)}]current page.north west) -- +(-5mm,0mm);% card upper right corner: horizontal line
+			\draw ([shift={(112.192mm,-59.18mm)}]current page.north west) -- +(0mm,5mm);% card upper right corner: vertical line
+			\draw ([shift={(112.192mm,-59.18mm)}]current page.north west) -- +(0mm,-5mm);% card upper right corner: vertical line
+			\draw ([shift={(53.878mm,-144.18mm)}]current page.north west) -- +(-5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(53.878mm,-144.18mm)}]current page.north west) -- +(5mm,0mm);% card lower left corner: horizontal line
+			\draw ([shift={(53.878mm,-144.18mm)}]current page.north west) -- +(0mm,-5mm);% card lower left corner: vertical line
+			\draw ([shift={(53.878mm,-144.18mm)}]current page.north west) -- +(0mm,5mm);% card lower left corner: vertical line
+			\draw ([shift={(112.192mm,-144.18mm)}]current page.north west) -- +(5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(112.192mm,-144.18mm)}]current page.north west) -- +(-5mm,0mm);% card lower rigth corner: horizontal line
+			\draw ([shift={(112.192mm,-144.18mm)}]current page.north west) -- +(0mm,-5mm);% card lower rigth corner: vertical line
+			\draw ([shift={(112.192mm,-144.18mm)}]current page.north west) -- +(0mm,5mm);% card lower rigth corner: vertical line
+\end{tikzpicture}
+	}
+}
+\begin{document}
+	\setlength{\unitlength}{1mm}
+ 
+	\newpage % Page 1 of 4
+	\begin{picture}(175.342,255.4)
+	% CARD IMAGES:
+		\put(0,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-001.png}}
+		\put(58.514,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-002.png}}
+		\put(117.028,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-003.png}}
+		\put(0,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-004.png}}
+		\put(58.514,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-005.png}}
+		\put(117.028,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-006.png}}
+		\put(0,0){\includegraphics[width=58.314mm,height=85mm]{Hlq-007.png}}
+		\put(58.514,0){\includegraphics[width=58.314mm,height=85mm]{Hlq-008.png}}
+		\put(117.028,0){\includegraphics[width=58.314mm,height=85mm]{Hlq-009.png}}
+	\end{picture}
+ 
+	\newpage % Page 2 of 4
+	\begin{picture}(175.342,255.4)
+	% CARD IMAGES:
+		\put(0,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-010.png}}
+		\put(58.514,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-011.png}}
+		\put(117.028,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-012.png}}
+		\put(0,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-013.png}}
+		\put(58.514,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-014.png}}
+		\put(117.028,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-015.png}}
+		\put(0,0){\includegraphics[width=58.314mm,height=85mm]{Hlq-016.png}}
+		\put(58.514,0){\includegraphics[width=58.314mm,height=85mm]{Hlq-017.png}}
+		\put(117.028,0){\includegraphics[width=58.314mm,height=85mm]{Hlq-018.png}}
+	\end{picture}
+ 
+	\newpage % Page 3 of 4
+	\begin{picture}(175.342,255.4)
+	% CARD IMAGES:
+		\put(0,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-019.png}}
+		\put(58.514,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-020.png}}
+		\put(117.028,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-021.png}}
+		\put(0,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-022.png}}
+		\put(58.514,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-023.png}}
+		\put(117.028,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-024.png}}
+		\put(0,0){\includegraphics[width=58.314mm,height=85mm]{Hlq-025.png}}
+		\put(58.514,0){\includegraphics[width=58.314mm,height=85mm]{Hlq-026.png}}
+		\put(117.028,0){\includegraphics[width=58.314mm,height=85mm]{Hlq-027.png}}
+	\end{picture}
+ 
+	\newpage % Page 4 of 4
+	\begin{picture}(175.342,255.4)
+	% CARD IMAGES:
+		\put(0,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-028.png}}
+		\put(58.514,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-029.png}}
+		\put(117.028,170.4){\includegraphics[width=58.314mm,height=85mm]{Hlq-030.png}}
+		\put(0,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-031.png}}
+		\put(58.514,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-032.png}}
+		\put(117.028,85.2){\includegraphics[width=58.314mm,height=85mm]{Hlq-033.png}}
+		\put(0,0){\includegraphics[width=58.314mm,height=85mm]{Hlq-034.png}}
+		\put(58.514,0){\includegraphics[width=58.314mm,height=85mm]{Hlq-035.png}}
+	\end{picture}
+\end{document}
